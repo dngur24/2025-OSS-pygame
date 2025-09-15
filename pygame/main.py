@@ -94,16 +94,16 @@ class Game:
         except Exception as e:
             print("배경 이미지 로드 실패:", e)
         #배경 음악 추가
-        try:
-            pygame.mixer.init()
-            self.bg_music = pygame.mixer.music.load(resource_path("songs\......已至。-12-塞壬唱片-MSR & 秋田真典.mp3"))
-            pygame.mixer.music.play(loops=-1, start =0.0)
+        # try:
+            # pygame.mixer.init()
+            # self.bg_music = pygame.mixer.music.load(resource_path("songs\......已至。-12-塞壬唱片-MSR & 秋田真典.mp3"))
+            # pygame.mixer.music.play(loops=-1, start =0.0)
         #에러 발생시 대처 (try except)        
-        except pygame.error as e:
-            print("pygame error",e)
+        # except pygame.error as e:
+            # print("pygame error",e)
 
-        except Exception as e:
-            print("can't play music now. please check again",e)
+        # except Exception as e:
+            # print("can't play music now. please check again",e)
         
 
         
@@ -267,27 +267,27 @@ class Game:
         if self.grade == 'A':
             canvas.create_text(320, 430, text="최종학점 A\n", fill="Crimson", font=("둥근모꼴", 30))
             canvas.create_text(320, 450, text="무사히 종강하셨습니다! 당신은 이제 대학원으로!", fill="Crimson", font=("둥근모꼴", 20))
-            pygame.mixer.init()
-            pygame.mixer.music.load(resource_path('MP_Ta Da.mp3'))
-            pygame.mixer.music.play(loops=1, start=0.0)
+            # pygame.mixer.init()
+            # pygame.mixer.music.load(resource_path('MP_Ta Da.mp3'))
+            # pygame.mixer.music.play(loops=1, start=0.0)
         elif self.grade == 'B':
             canvas.create_text(320, 430, text="최종학점 B\n", fill="Crimson", font=("둥근모꼴", 30))
             canvas.create_text(320, 450, text="무사히 종강하셨습니다! 노력은 하셨네요...", fill="Crimson", font=("둥근모꼴", 20))
-            pygame.mixer.init()
-            pygame.mixer.music.load(resource_path('pygame/MP_와우 (단체).mp3'))
-            pygame.mixer.music.play(loops=1, start=0.0)
+            # pygame.mixer.init()
+            # pygame.mixer.music.load(resource_path('pygame/MP_와우 (단체).mp3'))
+            # pygame.mixer.music.play(loops=1, start=0.0)
         elif self.grade == 'C':
             canvas.create_text(320, 420, text="최종학점 C\n", fill="Crimson", font=("둥근모꼴", 30))
             canvas.create_text(320, 450, text="무사히 종강하셨습니다! 종강만 하셨네요!", fill="Crimson", font=("둥근모꼴", 20))
-            pygame.mixer.init()
-            pygame.mixer.music.load(resource_path('pygame/MP_Dun Dun Dun.mp3'))
-            pygame.mixer.music.play(loops=1, start=0.0)
+            # pygame.mixer.init()
+            # pygame.mixer.music.load(resource_path('pygame/MP_Dun Dun Dun.mp3'))
+            # pygame.mixer.music.play(loops=1, start=0.0)
         else:
             canvas.create_text(320, 430, text="최종학점 F\n", fill="Crimson", font=("둥근모꼴", 30))
             canvas.create_text(320, 450, text="재수강 힘내세요..", fill="Crimson", font=("둥근모꼴", 20))
-            pygame.mixer.init()
-            pygame.mixer.music.load(resource_path('pygame/MP_Sad Trombone.mp3'))
-            pygame.mixer.music.play(loops=1, start=0.0)
+            # pygame.mixer.init()
+            # pygame.mixer.music.load(resource_path('pygame/MP_Sad Trombone.mp3'))
+            # pygame.mixer.music.play(loops=1, start=0.0)
 
         self.textblinker("Exit")  # 종료 대기
         sys.exit(1)
@@ -538,8 +538,8 @@ class object_item(element):
                     # 공격력 30% 증가
                     self.obj_main.attack_power = int(self.obj_main.attack_power * 1.3)
             elif self.item_type == "dalnim":
-                item_sound = pygame.mixer.Sound(resource_path('pygame/item_sound.wav'))
-                item_sound.play()
+                # item_sound = pygame.mixer.Sound(resource_path('pygame/item_sound.wav'))
+                # item_sound.play()
                 # 화면에 있는 모든 적 제거
                 for enemy in list(enemyObjects):
                     if hasattr(enemy, 'mhp'):
