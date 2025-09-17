@@ -125,14 +125,14 @@ class Board:
         if height_percentage >= 60:
             # 경고 음원만 재생하도록 처리
             if not self.background_red:  # 이전 상태와 다를 때만 음원을 변경
-                self.warning_sound.stop()  # 기존 경고 음원 멈추기
-                self.warning_sound.play(-1)  # 경고 음원 반복 재생
+                # self.warning_sound.stop()  # 기존 경고 음원 멈추기
+                # self.warning_sound.play(-1)  # 경고 음원 반복 재생
                 self.background_red = True
                 self.current_background = (255, 0, 0)  # 배경을 빨간색으로 변경
         else:
             # 60% 이하로 떨어졌을 때 경고 음원 멈추기 및 배경을 하얀색으로 변경
             if self.background_red:  # 이전 상태와 다를 때만 음원을 변경
-                self.warning_sound.stop()  # 경고 음원 멈추기
+                # self.warning_sound.stop()  # 경고 음원 멈추기
                 self.background_red = False
                 self.current_background = (255, 255, 255)  # 배경을 하얀색으로 변경
 
