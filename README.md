@@ -3,6 +3,8 @@
 
 [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/)
 
+대괄호 부분은 상황에 맞게 변형하여 사용한다.
+
 ```bash
 xhost +
 ```
@@ -10,6 +12,8 @@ xhost +
 ```bash
 docker build -t [pygame-alpha]
 ```
+
+원격 서버 환경에서 GUI 환경을 사용하기 위해 컨테이너 내부와 X11을 연결한다.
 
 ```bash
 docker run -it --env="DISPLAY=[default switch(vLan)172.20.80.1]:0" -v /tmp/.X11-unix:/tmp/.X11-unix [이미지pygame-alpha] bash
